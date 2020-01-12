@@ -1,0 +1,38 @@
+:root {
+    --blue-main: #0d4589;
+    --blue-border: #1663be;
+    --blue-link: #1863bb;
+}
+
+.jumbotron {
+    background-color: var(--blue-main);
+    color: white;
+    border-radius: 0;
+    padding: 20px;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.table .thead-dark th {
+    background-color: var(--blue-main);
+    border-color: var(--blue-border);
+}
+
+.page-item.active .page-link {
+    background-color: var(--blue-main);
+    border-color: var(--blue-border);
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: var(--blue-link);
+}
+
+.btn-primary {
+    background-color: var(--blue-main);
+}

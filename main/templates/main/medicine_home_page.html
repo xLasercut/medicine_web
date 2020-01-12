@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                {% include "components/pagination.html" %}
+            </div>
+            <div class="col-6">
+                {% include "components/search.html" %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>名称</th>
+                            <th>拉丁名</th>
+                            <th>英文名</th>
+                            <th>类别</th>
+                            <th>缩图</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for medicine in pages %}
+                            <tr>
+                                <td><a href="{{ medicine.url }}">{{ medicine.title }}</a></td>
+                                <td>
+                                    {{ medicine.specific.latin_name }}
+                                </td>
+                                <td>{{ medicine.specific.eng_name }}</td>
+                                <td>{{ medicine.specific.category }}</td>
+                                <td>{% image medicine.specific.image width-200 %}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

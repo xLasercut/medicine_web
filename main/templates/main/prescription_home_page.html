@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                {% include "components/pagination.html" %}
+            </div>
+            <div class="col-6">
+                {% include "components/search.html" %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>方名</th>
+                            <th>组成</th>
+                            <th>功用</th>
+                            <th>主治</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for prescription in pages %}
+                            <tr>
+                                <td><a href="{{ prescription.url }}">{{ prescription.title }}</a></td>
+                                <td>
+                                    {% for medicine in prescription.specific.get_composition_list %}
+                                        {{ medicine }};
+                                    {% endfor %}
+                                </td>
+                                <td>{{ prescription.specific.function|richtext }}</td>
+                                <td>{{ prescription.specific.cures|richtext }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
