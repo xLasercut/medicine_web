@@ -1,17 +1,98 @@
 {% extends "base.html" %}
 
 {% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
 
 {% block content %}
     <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {{ page.title }}
+            </div>
+        </div>
         <div class="row">
             <div class="col-12">
                 {% image page.image width-400 %}
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-2">
+                名称
+            </div>
+            <div class="col-10">
+                {{ page.title }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                英文名
+            </div>
+            <div class="col-10">
+                {{ page.specific.eng_name }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                拉丁名
+            </div>
+            <div class="col-10">
+                {{ page.specific.latin_name }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                类别
+            </div>
+            <div class="col-10">
                 {{ page.specific.category }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                来源
+            </div>
+            <div class="col-10">
+                {{ page.specific.origin|richtext }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                产地
+            </div>
+            <div class="col-10">
+                {{ page.specific.production_region|richtext }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                性状
+            </div>
+            <div class="col-10">
+                {{ page.specific.features|richtext }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                品质
+            </div>
+            <div class="col-10">
+                {{ page.specific.quality_requirements|richtext }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                性味
+            </div>
+            <div class="col-10">
+                {{ page.specific.properties|richtext }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                功效
+            </div>
+            <div class="col-10">
+                {{ page.specific.functions|richtext }}
             </div>
         </div>
     </div>
