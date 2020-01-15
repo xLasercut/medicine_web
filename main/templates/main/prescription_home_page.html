@@ -28,8 +28,8 @@
                             <tr>
                                 <td><a href="{{ prescription.url }}">{{ prescription.title }}</a></td>
                                 <td>
-                                    {% for medicine in prescription.specific.get_composition_list %}
-                                        {{ medicine }};
+                                    {% for medicine in prescription.specific.get_composition %}
+                                        <span>{{ medicine.title }}{% if not forloop.last %}, {% endif %}</span>
                                     {% endfor %}
                                 </td>
                                 <td>{{ prescription.specific.function|richtext }}</td>
