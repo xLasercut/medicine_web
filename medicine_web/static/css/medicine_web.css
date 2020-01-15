@@ -36,3 +36,8 @@ a:hover {
 .btn-primary {
     background-color: var(--blue-main);
 }
+
+.page-section-label {
+    font-weight: bold;
+    font-style: italic;
+}
