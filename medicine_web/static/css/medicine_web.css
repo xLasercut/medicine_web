@@ -26,7 +26,7 @@
 }
 
 a {
-    color: black;
+    color: var(--blue-main);
 }
 
 a:hover {
@@ -40,4 +40,17 @@ a:hover {
 .page-section-label {
     font-weight: bold;
     font-style: italic;
+}
+
+.card {
+    margin-bottom: 10px;
+}
+
+.search-result {
+    list-style-type: none;
+    padding: 0;
+}
+
+.search-result li {
+    margin-bottom: 20px;
 }

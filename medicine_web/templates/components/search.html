@@ -1,4 +1,8 @@
 <form action="{% url 'search' %}" method="get">
-    <input type="text" name="query">
-    <button class="btn btn-primary" type="submit">搜索</button>
+    <div class="input-group mb-3">
+        <input type="text" name="query" class="form-control" value="{{ search_query }}">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">搜索</button>
+        </div>
+    </div>
 </form>

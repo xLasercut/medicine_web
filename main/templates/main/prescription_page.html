@@ -6,106 +6,117 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <h3>{{ page.title }}</h3>
-            </div>
-        </div>
-        <div class="row">
-            {% for composition in page.specific.get_composition %}
-                <div class="col">
-                    <div>{% image composition.image width-300 %}</div>
-                    <a href="{{ composition.url }}">{{ composition.title }}</a>
+            <div class="col-10">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>{{ page.title }}</h3>
+                    </div>
                 </div>
-            {% endfor %}
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                名称
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
+                        名称
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-8">
+                        {{ page.title }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
+                        英文名
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-8">
+                        {{ page.specific.eng_name }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
+                        分类
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-8">
+                        {{ page.specific.classification }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
+                        出处
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-8">
+                        {{ page.specific.source|richtext }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
+                        组成
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-8">
+                        {% for medicine in page.get_composition %}
+                            <span>{{ medicine.title }}{% if not forloop.last %}, {% endif %}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
+                        用法
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-8">
+                        {{ page.specific.usage|richtext }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
+                        功用
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-8">
+                        {{ page.specific.function|richtext }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
+                        主治
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-8">
+                        {{ page.specific.cures|richtext }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
+                        病机
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-8">
+                        {{ page.specific.pathogenesis|richtext }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
+                        运用
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-8">
+                        {{ page.specific.application|richtext }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
+                        方歌
+                    </div>
+                    <div class="col-lg-11 col-md-10 col-8">
+                        {{ page.specific.indication|richtext }}
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.title }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                英文名
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.eng_name }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                分类
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.classification }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                出处
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.source|richtext }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                组成
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {% for medicine in page.get_composition %}
-                    <span>{{ medicine.title }}{% if not forloop.last %}, {% endif %}</span>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                用法
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.usage|richtext }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                功用
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.function|richtext }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                主治
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.cures|richtext }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                病机
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.pathogenesis|richtext }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                运用
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.application|richtext }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                方歌
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.indication|richtext }}
+            <div class="col-2">
+                <div class="row">
+                    <div class="col-12">
+                        {% for medicine in page.specific.get_composition %}
+                            {% image medicine.image width-300 as medicine_image %}
+                            <div class="card">
+                                <img src="{{ medicine_image.url }}" class="card-img-top">
+                                <div class="card-body">
+                                    <a href="{{ medicine.url }}" class="card-title">{{ medicine.title }}</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

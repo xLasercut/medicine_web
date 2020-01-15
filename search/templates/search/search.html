@@ -6,33 +6,52 @@
 {% block title %}Search{% endblock %}
 
 {% block content %}
-    <h1>Search</h1>
-
-    <form action="{% url 'search' %}" method="get">
-        <input type="text" name="query"{% if search_query %} value="{{ search_query }}"{% endif %}>
-        <input type="submit" value="Search" class="button">
-    </form>
-
-    {% if search_results %}
-        <ul>
-            {% for result in search_results %}
-                <li>
-                    <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
-                    {% if result.search_description %}
-                        {{ result.search_description }}
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-
-        {% if search_results.has_previous %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>搜索结果</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                {% include "components/search.html" %}
+            </div>
+        </div>
+        {% if search_results %}
+            <ul class="search-result">
+                {% for result in search_results %}
+                    <li>
+                        <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
+                        {% if result.search_description %}
+                            {{ result.search_description }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="row">
+                <div class="col-12">
+                    <nav>
+                        <ul class="pagination">
+                            <li class="page-item {% if not search_results.has_previous %}disabled{% endif %}">
+                                <a class="page-link" href="{% if search_results.has_previous %}{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}{% else %}#{% endif %}">
+                                    上一页
+                                </a>
+                            </li>
+                            <li class="page-item {% if not search_results.has_next %}disabled{% endif %}">
+                                <a class="page-link" href="{% if search_results.has_next %}{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}{% else %}#{% endif %}">
+                                    下一页
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        {% elif search_query %}
+            <div class="row">
+                <div class="col-12">
+                    <h6>未找到结果</h6>
+                </div>
+            </div>
         {% endif %}
-
-        {% if search_results.has_next %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
-        {% endif %}
-    {% elif search_query %}
-        No results found
-    {% endif %}
+    </div>
 {% endblock %}
