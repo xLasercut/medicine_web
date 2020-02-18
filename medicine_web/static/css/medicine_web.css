@@ -1,7 +1,8 @@
-:root {
-    --blue-main: #0d4589;
-    --blue-border: #1663be;
-    --blue-link: #1863bb;
+@import "./colors.css";
+@import "./fonts.css";
+
+body {
+    font-family: "Roboto", serif;
 }
 
 .jumbotron {
