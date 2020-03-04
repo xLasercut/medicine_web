@@ -16,83 +16,51 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                名称
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.title }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                英文名
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.eng_name }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                拉丁名
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.latin_name }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                类别
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.category }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                来源
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.origin|richtext }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                产地
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.production_region|richtext }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                性状
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.features|richtext }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                品质
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.quality_requirements|richtext }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                性味
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.properties|richtext }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                功效
-            </div>
-            <div class="col-lg-11 col-md-10 col-8">
-                {{ page.specific.functions|richtext }}
+            <div class="col-12">
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <td class="page-section-label">名称</td>
+                            <td><p>{{ page.title }}</p></td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">英文名</td>
+                            <td><p>{{ page.specific.eng_name }}</p></td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">拉丁名</td>
+                            <td><p>{{ page.specific.latin_name }}</p></td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">类别</td>
+                            <td><p>{{ page.specific.category }}</p></td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">来源</td>
+                            <td>{{ page.specific.origin|richtext }}</td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">产地</td>
+                            <td>{{ page.specific.production_region|richtext }}</td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">性状</td>
+                            <td>{{ page.specific.features|richtext }}</td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">品质</td>
+                            <td>{{ page.specific.quality_requirements|richtext }}</td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">性味</td>
+                            <td>{{ page.specific.properties|richtext }}</td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">功效</td>
+                            <td>{{ page.specific.functions|richtext }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

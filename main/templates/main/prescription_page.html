@@ -12,96 +12,60 @@
                         <h3>{{ page.title }}</h3>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                        名称
-                    </div>
-                    <div class="col-lg-11 col-md-10 col-8">
-                        {{ page.title }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                        英文名
-                    </div>
-                    <div class="col-lg-11 col-md-10 col-8">
-                        {{ page.specific.eng_name }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                        分类
-                    </div>
-                    <div class="col-lg-11 col-md-10 col-8">
-                        {{ page.specific.classification }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                        出处
-                    </div>
-                    <div class="col-lg-11 col-md-10 col-8">
-                        {{ page.specific.source|richtext }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                        组成
-                    </div>
-                    <div class="col-lg-11 col-md-10 col-8">
-                        {% for medicine in page.get_composition %}
-                            <span>{{ medicine.title }}{% if not forloop.last %}, {% endif %}</span>
-                        {% endfor %}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                        用法
-                    </div>
-                    <div class="col-lg-11 col-md-10 col-8">
-                        {{ page.specific.usage|richtext }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                        功用
-                    </div>
-                    <div class="col-lg-11 col-md-10 col-8">
-                        {{ page.specific.function|richtext }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                        主治
-                    </div>
-                    <div class="col-lg-11 col-md-10 col-8">
-                        {{ page.specific.cures|richtext }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                        病机
-                    </div>
-                    <div class="col-lg-11 col-md-10 col-8">
-                        {{ page.specific.pathogenesis|richtext }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                        运用
-                    </div>
-                    <div class="col-lg-11 col-md-10 col-8">
-                        {{ page.specific.application|richtext }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 col-4 page-section-label">
-                        方歌
-                    </div>
-                    <div class="col-lg-11 col-md-10 col-8">
-                        {{ page.specific.indication|richtext }}
-                    </div>
-                </div>
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <td class="page-section-label">名称</td>
+                            <td><p>{{ page.title }}</p></td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">英文名</td>
+                            <td><p>{{ page.specific.eng_name }}</p></td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">分类</td>
+                            <td><p>{{ page.specific.classification }}</p></td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">出处</td>
+                            <td>{{ page.specific.source|richtext }}</td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">组成</td>
+                            <td>
+                                <p>
+                                {% for medicine in page.get_composition %}
+                                    <span>{{ medicine.title }}{% if not forloop.last %}, {% endif %}</span>
+                                {% endfor %}
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">用法</td>
+                            <td>{{ page.specific.usage|richtext }}</td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">功用</td>
+                            <td>{{ page.specific.function|richtext }}</td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">主治</td>
+                            <td>{{ page.specific.cures|richtext }}</td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">病机</td>
+                            <td>{{ page.specific.pathogenesis|richtext }}</td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">运用</td>
+                            <td>{{ page.specific.application|richtext }}</td>
+                        </tr>
+                        <tr>
+                            <td class="page-section-label">方歌</td>
+                            <td>{{ page.specific.indication|richtext }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="col-2">
                 <div class="row">

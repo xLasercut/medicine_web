@@ -40,7 +40,7 @@ a:hover {
 
 .page-section-label {
     font-weight: bold;
-    font-style: italic;
+    width: 80px;
 }
 
 .card {

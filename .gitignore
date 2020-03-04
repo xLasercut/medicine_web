@@ -1,6 +1,13 @@
+# database files
 db.sqlite3
 media
 
+# editor config
+.vscode
 .idea
 
+# virtualenv
+.venv
+
+# pycache
 __pycache__
