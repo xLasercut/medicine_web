@@ -55,3 +55,27 @@ a:hover {
 .search-result li {
     margin-bottom: 20px;
 }
+
+.homepage-btn {
+    background: var(--blue-main);
+    height: 200px;
+    text-align: center;
+    display: block;
+    color: white;
+    text-decoration: none;
+    line-height: 200px;
+    margin-bottom: 10px;
+    font-size: 24pt;
+    border-radius: 10px;
+    transition: all ease 0.3s;
+}
+
+.homepage-btn:hover {
+    color: white;
+    text-decoration: none;
+    background: var(--blue-border);
+}
+
+.homepage-btn:active {
+    margin-top: 5px;
+}
